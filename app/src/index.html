@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MetaCoin | Truffle Webpack Demo w/ Frontend</title>
+  </head>
+  <style>
+    input {
+      display: block;
+      margin-bottom: 12px;
+    }
+  </style>
+  <body>
+    <h1>Calculadora - prueba de funcionalidad</h1>
+    <p>You have <strong class="balance">loading...</strong> META</p>
+
+    <h1>Ingrese la formula a calcular</h1>
+
+    <label for="operation">calcular:</label>
+    <input type="text" id="operation" placeholder="2+3-4" />
+
+    <button onclick="App.calcular()">Ejecutar formula</button>
+    <br></br>
+
+    <label for="receiver">Dirreccion del responsable:</label>
+    <input
+      type="text"
+      id="receiver"
+      placeholder="e.g. 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"
+    />
+
+    <button onclick="App.sendCoin()">Realizar prueba</button>
+
+    <p id="status"></p>
+    <p>
+      <strong>Nota:</strong> La calculadora solamente puede realizar operaciones basicas
+    </p>
+    <script src="index.js"></script>
+  </body>
+</html>
