@@ -24,7 +24,7 @@ const App = {
 
       this.refreshBalance();
     } catch (error) {
-      console.error("Could not connect to contract or chain.");
+      console.error("No podemos conectar el contrato a la cadena.");
     }
   },
 
@@ -40,12 +40,12 @@ const App = {
     const amount = parseInt(document.getElementById("amount").value);
     const receiver = document.getElementById("receiver").value;
 
-    this.setStatus("Initiating transaction... (please wait)");
+    this.setStatus("Iniciando transaccion... (por favor esperar)");
 
     const { sendCoin } = this.meta.methods;
     await sendCoin(receiver, amount).send({ from: this.account });
 
-    this.setStatus("Transaction complete!");
+    this.setStatus("Transaccion completada!");
     this.refreshBalance();
   },
 
@@ -70,7 +70,7 @@ window.addEventListener("load", function() {
     window.ethereum.enable(); // get permission to access accounts
   } else {
     console.warn(
-      "No web3 detected. Falling back to http://127.0.0.1:8545. You should remove this fallback when you deploy live",
+      "No se detectó web3. Volviendo a http://127.0.0.1:8545. Debe eliminar este respaldo cuando implemente en vivo",
     );
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
     App.web3 = new Web3(
