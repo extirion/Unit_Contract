@@ -10,7 +10,7 @@ const App = {
     const { web3 } = this;
 
     try {
-      // get contract instance
+      // llama a la intsancia del contrato
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = metaCoinArtifact.networks[networkId];
       this.meta = new web3.eth.Contract(
@@ -18,7 +18,7 @@ const App = {
         deployedNetwork.address,
       );
 
-      // get accounts
+      // solicita las cuentas
       const accounts = await web3.eth.getAccounts();
       this.account = accounts[0];
 
